@@ -1,13 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-// Clé secrète pour le JWT
+/** Clé partagée avec la génération des JWT. En production : définir `JWT_SECRET`. */
 export const secretKey = process.env.JWT_SECRET || 'defaultSecretKey';
 if (!process.env.JWT_SECRET) {
   console.warn('ATTENTION : Utilisation d\'une clé secrète par défaut. Veuillez définir JWT_SECRET dans les variables d\'environnement pour la production.');
 }
 
-// Définition des rôles
 export const ROLES = {
   guest: 'guest',
   user: 'user',
@@ -16,7 +15,7 @@ export const ROLES = {
   superadmin: 'superadmin'
 } as const;
 
-// Étendre l'interface Request pour ajouter la propriété 'user'
+// Extension de `Request` : propriété `user` renseignée après validation du JWT.
 declare module 'express-serve-static-core' {
   interface Request {
     user?: {
@@ -26,12 +25,14 @@ declare module 'express-serve-static-core' {
   }
 }
 
-// Middleware pour vérifier le rôle de l'utilisateur
+/**
+ * Middleware d’autorisation par rôle : en-tête `Authorization: Bearer`, vérification JWT, contrôle de `decoded.role`.
+ * Le rôle `superadmin` contourne la liste des rôles autorisés ; les autres doivent figurer dans `allowedRoles`.
+ */
 export const authorizeRole = (allowedRoles: Array<keyof typeof ROLES>) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
 
-    // Si pas de token, accès refusé pour les routes protégées
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return res.status(401).json({ 
         message: 'Token d\'authentification manquant' 
@@ -47,35 +48,26 @@ export const authorizeRole = (allowedRoles: Array<keyof typeof ROLES>) => {
 
     try {
       const decoded = jwt.verify(token, secretKey) as any;
-      
-      // Extraire l'ID utilisateur (peut être userId ou id)
+
+      // Compatibilité : le payload peut exposer l’identifiant sous `userId` ou `id`.
       const userId = decoded.userId || decoded.id || '';
       const userRole = decoded.role as keyof typeof ROLES;
-      
-      // Log pour débogage
-      console.log(`🔐 [authorizeRole] Utilisateur: ${userId}, Rôle: ${userRole}, Routes autorisées: ${allowedRoles.join(', ')}`);
-      
-      // Définir req.user avec les bonnes propriétés
+
       req.user = {
         id: userId.toString(),
         role: userRole
       };
 
-      // Le superadmin a accès à toutes les routes
       if (userRole === 'superadmin') {
-        console.log(`✅ [authorizeRole] Superadmin détecté - accès accordé à toutes les routes`);
         return next();
       }
 
-      // Vérification du rôle uniquement si l'utilisateur est authentifié
       if (userRole && !allowedRoles.includes(userRole)) {
-        console.log(`❌ [authorizeRole] Accès refusé: rôle '${userRole}' non autorisé`);
         return res.status(403).json({ 
           message: `Accès interdit, rôle '${userRole}' insuffisant. Rôle requis: ${allowedRoles.join(', ')}` 
         });
       }
 
-      console.log(`✅ [authorizeRole] Accès accordé pour le rôle: ${userRole}`);
       next();
     } catch (error) {
       console.error('Erreur de vérification du token:', error);
@@ -86,7 +78,7 @@ export const authorizeRole = (allowedRoles: Array<keyof typeof ROLES>) => {
   };
 };
 
-// Middleware pour vérifier uniquement le token sans le rôle
+/** Vérifie uniquement la validité du JWT et renseigne `req.user` (sans contrôle de rôle). */
 export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
 
@@ -101,7 +93,6 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
 
   try {
     const decoded = jwt.verify(tokenValue, secretKey) as any;
-    // S'assurer que l'ID utilisateur est disponible dans req.user
     req.user = {
       id: decoded.userId || decoded.id,
       role: decoded.role

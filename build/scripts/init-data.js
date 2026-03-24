@@ -280,57 +280,7 @@ async function initGames() {
             UserId: devUser[0]?.id || null,
         },
         {
-            title: 'Portfolio Angular',
-            price: 0,
-            authorStudio: 'JamesStudio',
-            madewith: 'Angular',
-            description: 'Un portfolio moderne développé avec Angular, affichant mes projets web, animations, et intégration API. Conçu pour être rapide, responsive et évolutif.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'API Node Auth',
-            price: 0,
-            authorStudio: 'JamesStudio',
-            madewith: 'Node.js + Express',
-            description: 'Une API sécurisée avec JWT, système d’authentification complet, gestion des utilisateurs, rôles et permissions.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'DiagImmo WebApp',
-            price: 0,
-            authorStudio: 'JamesStudio',
-            madewith: 'Angular + Node.js',
-            description: 'Application complète pour la gestion des diagnostics immobiliers : formulaires dynamiques, uploads d’images, gestion clients.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageFr[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'Minecraft Manager',
-            price: 0,
-            authorStudio: 'JamesStudio',
-            madewith: 'Node.js',
-            description: 'Un outil permettant de gérer un serveur Minecraft via une interface web : redémarrage, logs, configuration simple.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'JGS Dashboard',
-            price: 0,
-            authorStudio: 'JamesStudio',
-            madewith: 'Angular + Chart.js',
-            description: 'Un tableau de bord interactif permettant d’afficher des statistiques de projets, performance serveur, ou analytics web.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'Fantasy Warriors',
+            title: 'Fantasy Warrior',
             price: 39.99,
             authorStudio: 'Dragon Lore Studios',
             madewith: 'RPG Maker',
@@ -340,41 +290,11 @@ async function initGames() {
             UserId: devUser[0]?.id || null,
         },
         {
-            title: 'Rhythm Beat',
-            price: 9.99,
-            authorStudio: 'Beat Masters',
-            madewith: 'Custom Engine',
-            description: 'A fast-paced rhythm game that challenges your musical and reflex skills. Follow the beat, hit the notes, and become a rhythm master in this addictive music game.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'Rogue Dungeon',
-            price: 24.99,
-            authorStudio: 'Dungeon Crawler Inc.',
-            madewith: 'Godot Engine',
-            description: 'A roguelike dungeon crawler with procedurally generated levels and permadeath. Each run is unique, and death is permanent. Can you survive the depths?',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'Simulator Pro',
-            price: 34.99,
-            authorStudio: 'SimPro Studios',
-            madewith: 'Unity',
-            description: 'The ultimate simulation game, where you can create and manage everything from cities to farms. Build, manage, and expand your empire in this comprehensive simulation experience.',
-            StatusId: statusAvailable[0]?.id || null,
-            LanguageId: languageEn[0]?.id || null,
-            UserId: devUser[0]?.id || null,
-        },
-        {
-            title: 'Cyber Heist',
+            title: 'Cyber Runner',
             price: 27.99,
             authorStudio: 'Neon Games',
             madewith: 'Unreal Engine 5',
-            description: 'A cyberpunk action game set in a dystopian future. Hack systems, fight corporate security, and pull off the ultimate heist in this high-tech adventure.',
+            description: 'A cyberpunk action game set in a dystopian future. Run through neon-lit streets, hack systems, and fight corporate security in this high-tech adventure.',
             StatusId: statusDev[0]?.id || null,
             LanguageId: languageEn[0]?.id || null,
             UserId: devUser[0]?.id || null,
@@ -390,11 +310,41 @@ async function initGames() {
             UserId: devUser[0]?.id || null,
         },
         {
+            title: 'Zombie Apocalypse',
+            price: 24.99,
+            authorStudio: 'Horror Games Inc.',
+            madewith: 'Unity',
+            description: 'Survive the zombie apocalypse in this intense survival horror game. Fight hordes of undead, scavenge for resources, and build your base to survive the end of the world.',
+            StatusId: statusAvailable[0]?.id || null,
+            LanguageId: languageEn[0]?.id || null,
+            UserId: devUser[0]?.id || null,
+        },
+        {
+            title: 'Ocean Explorer',
+            price: 18.99,
+            authorStudio: 'Deep Sea Studios',
+            madewith: 'Godot Engine',
+            description: 'Dive into the depths of the ocean and explore mysterious underwater worlds. Discover hidden treasures, encounter marine life, and uncover the secrets of the deep sea.',
+            StatusId: statusAvailable[0]?.id || null,
+            LanguageId: languageEn[0]?.id || null,
+            UserId: devUser[0]?.id || null,
+        },
+        {
             title: 'Racing Legends',
             price: 31.99,
             authorStudio: 'Speed Games',
             madewith: 'Unreal Engine 5',
             description: 'Experience the thrill of high-speed racing in the most realistic racing simulator. Customize your cars, race on legendary tracks, and become a racing legend.',
+            StatusId: statusAvailable[0]?.id || null,
+            LanguageId: languageEn[0]?.id || null,
+            UserId: devUser[0]?.id || null,
+        },
+        {
+            title: 'Puzzle Master',
+            price: 12.99,
+            authorStudio: 'Brain Teasers',
+            madewith: 'Custom Engine',
+            description: 'Challenge your mind with hundreds of puzzles and brain teasers. From logic puzzles to pattern recognition, become the ultimate puzzle master.',
             StatusId: statusAvailable[0]?.id || null,
             LanguageId: languageEn[0]?.id || null,
             UserId: devUser[0]?.id || null,
@@ -427,31 +377,13 @@ async function initGames() {
             platforms: ['PC'],
             tags: ['Single Player', 'AAA']
         },
-        'Fantasy Warriors': {
+        'Fantasy Warrior': {
             genres: ['RPG', 'Action-Adventure'],
             controllers: ['Clavier/Souris', 'Manette'],
             platforms: ['PC'],
             tags: ['Single Player', 'Indie']
         },
-        'Rhythm Beat': {
-            genres: ['Rhythm'],
-            controllers: ['Clavier/Souris', 'Tactile'],
-            platforms: ['PC', 'Web', 'Mobile'],
-            tags: ['Single Player', 'Casual']
-        },
-        'Rogue Dungeon': {
-            genres: ['Roguelike', 'RPG'],
-            controllers: ['Clavier/Souris'],
-            platforms: ['PC', 'Web'],
-            tags: ['Single Player', 'Indie']
-        },
-        'Simulator Pro': {
-            genres: ['Simulation'],
-            controllers: ['Clavier/Souris'],
-            platforms: ['PC'],
-            tags: ['Single Player', 'Casual']
-        },
-        'Cyber Heist': {
+        'Cyber Runner': {
             genres: ['FPS', 'Action-Adventure'],
             controllers: ['Clavier/Souris', 'Manette'],
             platforms: ['PC'],
@@ -463,11 +395,29 @@ async function initGames() {
             platforms: ['PC', 'Web'],
             tags: ['Single Player', 'Indie']
         },
+        'Zombie Apocalypse': {
+            genres: ['Survival', 'Action-Adventure'],
+            controllers: ['Clavier/Souris', 'Manette'],
+            platforms: ['PC', 'Web'],
+            tags: ['Single Player', 'Indie']
+        },
+        'Ocean Explorer': {
+            genres: ['Action-Adventure', 'Simulation'],
+            controllers: ['Clavier/Souris', 'Manette'],
+            platforms: ['PC', 'Web'],
+            tags: ['Single Player', 'Indie']
+        },
         'Racing Legends': {
             genres: ['Simulation', 'Action-Adventure'],
             controllers: ['Clavier/Souris', 'Manette'],
             platforms: ['PC'],
             tags: ['Single Player', 'Multiplayer', 'Competitive']
+        },
+        'Puzzle Master': {
+            genres: ['Reflection', 'Puzzlers'],
+            controllers: ['Clavier/Souris', 'Tactile'],
+            platforms: ['PC', 'Web', 'Mobile'],
+            tags: ['Single Player', 'Casual']
         },
     };
     for (const gameData of gamesData) {

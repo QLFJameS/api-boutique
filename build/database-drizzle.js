@@ -1,3 +1,6 @@
+/**
+ * Connexion MySQL et client Drizzle pour l’API principale : création de schéma si besoin, migrations, export `db`.
+ */
 import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
 import * as schema from './Models/schema.js';
