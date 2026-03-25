@@ -197,28 +197,28 @@ async function initUsers() {
     const usersData = [
         {
             username: 'admin',
-            email: 'admin@playforge.com',
+            email: 'admin@sharegames.com',
             password: await bcrypt.hash('admin123', 12),
             bio: 'Administrateur principal',
             RoleId: adminRole[0]?.id || null,
         },
         {
             username: 'dev1',
-            email: 'dev1@playforge.com',
+            email: 'dev1@sharegames.com',
             password: await bcrypt.hash('dev123', 12),
             bio: 'Développeur de jeux',
             RoleId: devRole[0]?.id || null,
         },
         {
             username: 'user1',
-            email: 'user1@playforge.com',
+            email: 'user1@sharegames.com',
             password: await bcrypt.hash('user123', 12),
             bio: 'Utilisateur standard',
             RoleId: userRole[0]?.id || null,
         },
         {
             username: 'superadmin',
-            email: 'superadmin@playforge.com',
+            email: 'superadmin@sharegames.com',
             password: await bcrypt.hash('super123', 12),
             bio: 'Super administrateur',
             RoleId: superAdminRole[0]?.id || null,

@@ -208,22 +208,22 @@ npx drizzle-kit push
 ### Test Users
 
 1. **user1** (Standard User)
-   - Email: `user1@playforge.com`
+   - Email: `user1@sharegames.com`
    - Password: `user123`
    - Role: `user`
 
 2. **dev1** (Developer)
-   - Email: `dev1@playforge.com`
+   - Email: `dev1@sharegames.com`
    - Password: `dev123`
    - Role: `developer`
 
 3. **admin** (Administrator)
-   - Email: `admin@playforge.com`
+   - Email: `admin@sharegames.com`
    - Password: `admin123`
    - Role: `admin`
 
 4. **superadmin** (Super Administrator)
-   - Email: `superadmin@playforge.com`
+   - Email: `superadmin@sharegames.com`
    - Password: `super123`
    - Role: `superadmin`
 

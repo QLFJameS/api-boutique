@@ -1,5 +1,5 @@
 /**
- * API REST principale PlayForge (Express, port 9090).
+ * API REST principale Sharegames (Express, port 9090).
  * Données : Drizzle ORM / MySQL. CORS autorisé pour l’application Angular (4200) et le service upload (9091).
  */
 import cors from "cors";

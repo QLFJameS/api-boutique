@@ -6,9 +6,9 @@ export default defineConfig({
     out: './drizzle',
     dbCredentials: {
         host: 'localhost',
-        user: 'playAdmin',
-        password: 'playAdmin',
-        database: 'PlayForge',
+        user: 'ShareAdmin',
+        password: 'ShareAdmin',
+        database: 'Sharegames',
     },
 });
 

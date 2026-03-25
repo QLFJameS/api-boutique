@@ -5,10 +5,10 @@ import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
 import * as schema from './Models/schema.js';
 const DB_CONFIG = {
-    host: 'localhost',
-    user: 'playAdmin',
-    password: 'playAdmin',
-    database: 'PlayForge',
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'ShareAdmin',
+    password: process.env.DB_PASSWORD || 'ShareAdmin',
+    database: process.env.DB_NAME || 'Sharegames',
 };
 /**
  * Créer la base de données si elle n'existe pas
